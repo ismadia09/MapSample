@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  MapSample
+
+  Created by Isma Dia on 15/11/2017.
+  Copyright © 2017 Isma Dia. All rights reserved.
+*/
+
+"controller.new_apple_store.title" = "New Apple Store";
+"controller.new_apple_store.title_label" = "Name";
+"controller.new_apple_store.latitude_label" = "Latitude";
+"controller.new_apple_store.longitude_label" = "Longitude";
+"controller.new_apple_store.opening_hours_label" = "Opening Hours";
+
+
+"app.vocabulary.error_title" = "Error";
+"app.vocabulary.error_form_message" = "You have to fill the text fields";
+"app.vocabulary.close" = "Close";
