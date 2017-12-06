@@ -8,6 +8,7 @@
 
 import Foundation
 
+//juste des classe puevent implementer ce protocole
 public protocol StoreProvider: class {
     
     var stores : [Store] {get}
