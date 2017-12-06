@@ -15,14 +15,18 @@ class MainStoreViewController: UIViewController, StoreProvider {
     var stores: [Store] = []
     
     // appelé uniquement la 1ere fois
+    //ajouter les stores dans la carte
     lazy var mapViewController: MapViewController = {
         let mapViewController = MapViewController()
         mapViewController.storeProvider = self
         return mapViewController
     }()
     
+    //ajouter les stores dans la liste
     lazy var storeListController: StoreListViewController = {
-        return StoreListViewController()
+        let storeListViewController = StoreListViewController()
+        storeListViewController.storeProvider = self
+        return storeListViewController
     }()
     
     

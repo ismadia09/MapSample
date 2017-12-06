@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoreListViewController" customModule="MapSample" customModuleProvider="target">
             <connections>
+                <outlet property="storeCollectionView" destination="ant-tm-EU0" id="VVw-yZ-pUW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,8 +19,30 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ant-tm-EU0">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xYz-qq-4yA">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zj1-vt-Yv9"/>
+                        <outlet property="delegate" destination="-1" id="2Os-tc-o0m"/>
+                    </connections>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="z7D-nc-Sk6" firstAttribute="bottom" secondItem="ant-tm-EU0" secondAttribute="bottom" id="4Z8-QB-vM1"/>
+                <constraint firstItem="z7D-nc-Sk6" firstAttribute="trailing" secondItem="ant-tm-EU0" secondAttribute="trailing" id="Ebv-Qs-7cb"/>
+                <constraint firstItem="ant-tm-EU0" firstAttribute="top" secondItem="z7D-nc-Sk6" secondAttribute="top" id="kiu-fx-VPr"/>
+                <constraint firstItem="ant-tm-EU0" firstAttribute="leading" secondItem="z7D-nc-Sk6" secondAttribute="leading" id="wUg-fd-hQg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="z7D-nc-Sk6"/>
         </view>
     </objects>
 </document>
