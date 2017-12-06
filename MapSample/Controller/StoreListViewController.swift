@@ -12,6 +12,8 @@ class StoreListViewController: UIViewController {
     
     @IBOutlet var storeCollectionView : UICollectionView!
     
+    weak var storeProvider: StoreProvider?
+    
     
     
     let cellId = "storeListCell"
@@ -26,6 +28,12 @@ class StoreListViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        storeCollectionView.reloadData()
+    }
 
 }
 
@@ -33,13 +41,20 @@ class StoreListViewController: UIViewController {
 extension StoreListViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 500
+        return storeProvider?.stores.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = storeCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! StoreListCollectionViewCell
         
+        guard let store = storeProvider?.stores[indexPath.row] else {
+            fatalError("Not possible")
+        }
+        cell.titleLabel.text = store.name
+        cell.latLabel.text = String(store.coordinate.latitude)
+        cell.lonLabel.text = String(store.coordinate.longitude)
+        cell.openingHoursLabel.text = store.openingHours
         return cell
     }
     
