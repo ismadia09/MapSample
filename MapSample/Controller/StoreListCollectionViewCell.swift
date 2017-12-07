@@ -22,6 +22,8 @@ class StoreListCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        //self.contentView.layer.cornerRadius = 10
     }
 
 }

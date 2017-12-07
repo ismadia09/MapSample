@@ -55,6 +55,9 @@ extension StoreListViewController : UICollectionViewDataSource {
         cell.latLabel.text = String(store.coordinate.latitude)
         cell.lonLabel.text = String(store.coordinate.longitude)
         cell.openingHoursLabel.text = store.openingHours
+        cell.layer.cornerRadius = 10
+        cell.layer.borderColor = UIColor.darkGray.cgColor
+        cell.layer.borderWidth = 2
         return cell
     }
     
