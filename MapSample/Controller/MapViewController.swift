@@ -75,7 +75,7 @@ extension Store{
     public var annotation: MKAnnotation {
         let pointAnnotation = MKPointAnnotation()
         pointAnnotation.title = self.name
-        pointAnnotation.coordinate = self.coordinate
+        pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
         pointAnnotation.subtitle = self.openingHours
         return pointAnnotation
     }

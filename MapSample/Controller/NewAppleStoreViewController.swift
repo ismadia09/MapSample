@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 //custome delegate pour garder le store créer pour pouvoir l'utiliser partout
 public protocol NewAppleStoreViewControllerDelegate : class {
@@ -29,6 +30,8 @@ public class NewAppleStoreViewController: UIViewController {
     
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var hoursTextField: UITextField!
+    
+    public var context : NSManagedObjectContext!
     
     
     //Lorsqu'on 
@@ -55,6 +58,11 @@ public class NewAppleStoreViewController: UIViewController {
         //création du bouton valider
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(submitAppleStore))
         
+        
+        //intialiser le context
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            context = appDelegate.context
+        }
         
     }
     
@@ -88,7 +96,14 @@ public class NewAppleStoreViewController: UIViewController {
         }
         
         
-        let store = Store(name: title, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon), openingHours : hours)
+        //let store = Store(name: title, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon), openingHours : hours)
+        let store = Store(context: self.context)
+        store.name = title
+        store.latitude = lat
+        store.longitude = lon
+        store.openingHours = hours
+        
+        try? context.save()
         
         //on met le store dans le delegate, on le notifie mais personne ecout pour l'instant, il faut le faire dans le view controller de la map
         self.delegate?.newAppleStoreViewController(self, didCreateStore: store)

@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
+
 
 class MainStoreViewController: UIViewController, StoreProvider {
+    
+    public var context : NSManagedObjectContext!
     
     @IBOutlet var childContentView : UIView!
     
