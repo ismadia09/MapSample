@@ -96,14 +96,7 @@ public class NewAppleStoreViewController: UIViewController {
         }
         
         
-        //let store = Store(name: title, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon), openingHours : hours)
-        let store = Store(context: self.context)
-        store.name = title
-        store.latitude = lat
-        store.longitude = lon
-        store.openingHours = hours
-        
-        try? context.save()
+        let store = CoreDataHandler.createStore(name: title, latitude: lat, longitude: lon, openingHours: hours)
         
         //on met le store dans le delegate, on le notifie mais personne ecout pour l'instant, il faut le faire dans le view controller de la map
         self.delegate?.newAppleStoreViewController(self, didCreateStore: store)
