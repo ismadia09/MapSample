@@ -100,6 +100,7 @@ extension MapViewController: MKMapViewDelegate{
         let view = mapView.dequeueReusableAnnotationView(withIdentifier: MapViewController.appleStoreId)
         if let reused = view {
             reused.annotation = annotation
+            reused.canShowCallout = true
             return reused
         }
             //si la vue de la localisation n'existe pas
@@ -107,6 +108,7 @@ extension MapViewController: MKMapViewDelegate{
             pin.canShowCallout = true
             pin.pinTintColor = .yellow
         
-        return pin
+        
+        return nil
     }
 }

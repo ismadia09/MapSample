@@ -62,11 +62,25 @@ class CoreDataHandler : NSObject {
             for store in result {
                 context.delete(store)
             }
+             try? context.save()
             return true
             
         }catch{
             print ("erreur delete stores")
             return false
+        }
+    }
+    
+    class func deleteSpecificStore(id: Int){
+        let context = getContext()
+        let request : NSFetchRequest<Store> = Store.fetchRequest()
+        do {
+        var result = try context.fetch(request)
+        let obj = result[id]
+        context.delete(obj)
+        try? context.save()
+        }catch {
+            print("error delete store " + String(id))
         }
     }
 }

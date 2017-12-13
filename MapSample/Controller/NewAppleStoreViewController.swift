@@ -33,6 +33,11 @@ public class NewAppleStoreViewController: UIViewController {
     
     public var context : NSManagedObjectContext!
     
+    @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var latView: UIView!
+    @IBOutlet weak var lonView: UIView!
+    @IBOutlet weak var hoursView: UIView!
+    
     
     //Lorsqu'on 
     public weak var delegate: NewAppleStoreViewControllerDelegate?
@@ -51,6 +56,15 @@ public class NewAppleStoreViewController: UIViewController {
         self.lonTextField.delegate = self
         self.hoursTextField.delegate = self
         
+        nameView.layer.cornerRadius = 5
+        latView.layer.cornerRadius = 5
+        lonView.layer.cornerRadius = 5
+        hoursView.layer.cornerRadius = 5
+        
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.tintColor = UIColor.white
+        navigationBar.barTintColor = UIColor.darkGray
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         //création du bouton annuler
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeViewController))
@@ -58,11 +72,6 @@ public class NewAppleStoreViewController: UIViewController {
         //création du bouton valider
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(submitAppleStore))
         
-        
-        //intialiser le context
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            context = appDelegate.context
-        }
         
     }
     
