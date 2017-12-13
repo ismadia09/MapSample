@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDs-u9-DMO" userLabel="NameView">
-                    <rect key="frame" x="40" y="60" width="334" height="50"/>
+                    <rect key="frame" x="40" y="104" width="334" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmN-s0-CXG">
                             <rect key="frame" x="10" y="10" width="41" height="30"/>
@@ -59,7 +59,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jym-Jl-XYk" userLabel="LatView">
-                    <rect key="frame" x="40" y="130" width="334" height="50"/>
+                    <rect key="frame" x="40" y="174" width="334" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3l-tr-66j">
                             <rect key="frame" x="10" y="10" width="67.333333333333329" height="30"/>
@@ -86,7 +86,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyA-rF-k3c" userLabel="LonView">
-                    <rect key="frame" x="40" y="200" width="334" height="50"/>
+                    <rect key="frame" x="40" y="244" width="334" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMx-4y-xwS">
                             <rect key="frame" x="10" y="10" width="81.333333333333343" height="30"/>
@@ -113,7 +113,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-Yf-dv0" userLabel="HoursView">
-                    <rect key="frame" x="40" y="270" width="334" height="50"/>
+                    <rect key="frame" x="40" y="314" width="334" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horaires:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-eg-YKc">
                             <rect key="frame" x="10" y="10" width="69.333333333333329" height="30"/>
@@ -155,6 +155,7 @@
                 <constraint firstItem="Jym-Jl-XYk" firstAttribute="top" secondItem="eDs-u9-DMO" secondAttribute="bottom" constant="20" id="tPy-LA-v96"/>
                 <constraint firstItem="Vea-Yf-dv0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="xyF-oN-50F"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>

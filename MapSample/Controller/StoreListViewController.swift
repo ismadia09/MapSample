@@ -27,10 +27,12 @@ class StoreListViewController: UIViewController {
         
         let nibCell = UINib(nibName: "StoreListTableViewCell", bundle: nil)
         storeTableView.register(nibCell, forCellReuseIdentifier: cellId)
-
-       
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(actionEdit))
     }
     
+    @objc func actionEdit() {
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

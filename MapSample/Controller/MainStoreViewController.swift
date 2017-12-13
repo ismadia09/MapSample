@@ -46,11 +46,14 @@ class MainStoreViewController: UIViewController, StoreProvider {
         //ajout dans de la map view controller dans le main store
         self.addChildViewController(mapViewController, in: childContentView)
 
-        
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(actionEdit))
+        //self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         stores = CoreDataHandler.fetchStore()!
     }
-
+    @objc func actionEdit() {
+        
+    }
    
     
     // le bouton sert a switcher en la map et la liste et obligatoiremetn dans le mainStore car besoin pour switcher
@@ -67,9 +70,11 @@ class MainStoreViewController: UIViewController, StoreProvider {
         self.removeVisibleChildViewController(visibleViewController)
         
         if visibleViewController == self.mapViewController {
-            self.addChildViewController(storeListController, in: childContentView)
+            self.addChildViewController(UINavigationController(rootViewController : storeListController), in: childContentView)
+            //self.navigationItem.rightBarButtonItem?.isEnabled = true
         }else {
             self.addChildViewController(mapViewController, in: childContentView)
+            //self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
         
         UIView.commitAnimations()

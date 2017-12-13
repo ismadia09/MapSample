@@ -83,4 +83,15 @@ class CoreDataHandler : NSObject {
             print("error delete store " + String(id))
         }
     }
+    
+    class func updateSpecificStore(){
+        let context = getContext()
+        let request : NSFetchRequest<Store> = Store.fetchRequest()
+        do {
+            var result = try context.fetch(request)
+            try? context.save()
+        }catch {
+            print("error update store ")
+        }
+    }
 }
