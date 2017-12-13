@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 //custome delegate pour garder le store créer pour pouvoir l'utiliser partout
 public protocol NewAppleStoreViewControllerDelegate : class {
@@ -30,6 +31,13 @@ public class NewAppleStoreViewController: UIViewController {
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var hoursTextField: UITextField!
     
+    public var context : NSManagedObjectContext!
+    
+    @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var latView: UIView!
+    @IBOutlet weak var lonView: UIView!
+    @IBOutlet weak var hoursView: UIView!
+    
     
     //Lorsqu'on 
     public weak var delegate: NewAppleStoreViewControllerDelegate?
@@ -48,6 +56,15 @@ public class NewAppleStoreViewController: UIViewController {
         self.lonTextField.delegate = self
         self.hoursTextField.delegate = self
         
+        nameView.layer.cornerRadius = 5
+        latView.layer.cornerRadius = 5
+        lonView.layer.cornerRadius = 5
+        hoursView.layer.cornerRadius = 5
+        
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.tintColor = UIColor.white
+        navigationBar.barTintColor = UIColor.darkGray
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         //création du bouton annuler
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeViewController))
@@ -88,7 +105,7 @@ public class NewAppleStoreViewController: UIViewController {
         }
         
         
-        let store = Store(name: title, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon), openingHours : hours)
+        let store = CoreDataHandler.createStore(name: title, latitude: lat, longitude: lon, openingHours: hours)
         
         //on met le store dans le delegate, on le notifie mais personne ecout pour l'instant, il faut le faire dans le view controller de la map
         self.delegate?.newAppleStoreViewController(self, didCreateStore: store)

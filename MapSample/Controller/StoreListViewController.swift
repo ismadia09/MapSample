@@ -10,7 +10,8 @@ import UIKit
 
 class StoreListViewController: UIViewController {
     
-    @IBOutlet var storeCollectionView : UICollectionView!
+    
+    @IBOutlet var storeTableView : UITableView!
     
     weak var storeProvider: StoreProvider?
     
@@ -20,60 +21,73 @@ class StoreListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        storeCollectionView.delegate = self
-        storeCollectionView.dataSource = self
+        storeTableView.delegate = self
+        storeTableView.dataSource = self
+    
         
-        let nibCell = UINib(nibName: "StoreListCollectionViewCell", bundle: nil)
-        storeCollectionView.register(nibCell, forCellWithReuseIdentifier: cellId)
+        let nibCell = UINib(nibName: "StoreListTableViewCell", bundle: nil)
+        storeTableView.register(nibCell, forCellReuseIdentifier: cellId)
 
-        // Do any additional setup after loading the view.
+       
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        storeCollectionView.reloadData()
+        storeTableView.reloadData()
     }
+    
+    
 
 }
 
 
-extension StoreListViewController : UICollectionViewDataSource {
+extension StoreListViewController : UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storeProvider?.stores.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = storeCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! StoreListCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = storeTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! StoreListTableViewCell
         
         guard let store = storeProvider?.stores[indexPath.row] else {
             fatalError("Not possible")
         }
         cell.titleLabel.text = store.name
-        cell.latLabel.text = String(store.coordinate.latitude)
-        cell.lonLabel.text = String(store.coordinate.longitude)
+        cell.latLabel.text = String(store.latitude)
+        cell.lonLabel.text = String(store.longitude)
         cell.openingHoursLabel.text = store.openingHours
-        cell.layer.cornerRadius = 10
+        
+        cell.layer.cornerRadius = 5
         cell.layer.borderColor = UIColor.darkGray.cgColor
-        cell.layer.borderWidth = 2
+        cell.layer.borderWidth = 0
         return cell
     }
+   
+
+}
+
+extension StoreListViewController : UITableViewDelegate{
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.storeTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete{
+            CoreDataHandler.deleteSpecificStore(id: indexPath.row)
+            storeProvider?.stores.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        
+    }
     
 }
 
-extension StoreListViewController : UICollectionViewDelegateFlowLayout{
-    
-    //taille de l'element de la collection view
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = collectionView.bounds.width
-        
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            width -= layout.minimumLineSpacing
-        }
-        return CGSize(width: width, height: width/2)
-    }
-    
-}
+

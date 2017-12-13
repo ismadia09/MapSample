@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
+
 
 class MainStoreViewController: UIViewController, StoreProvider {
+    
+    public var context : NSManagedObjectContext!
     
     @IBOutlet var childContentView : UIView!
     
@@ -42,12 +46,14 @@ class MainStoreViewController: UIViewController, StoreProvider {
         //ajout dans de la map view controller dans le main store
         self.addChildViewController(mapViewController, in: childContentView)
 
-        // Do any additional setup after loading the view.
+        
+        
+        stores = CoreDataHandler.fetchStore()!
     }
 
    
     
-    // le bouton sert a switccher en la map et la liste et obligatoiremetn dans le mainStore car besoin pour switcher
+    // le bouton sert a switcher en la map et la liste et obligatoiremetn dans le mainStore car besoin pour switcher
     @IBAction func swtichButton(_ sender: Any) {
         
         //création d'animation
@@ -87,7 +93,9 @@ extension MainStoreViewController : NewAppleStoreViewControllerDelegate {
     func newAppleStoreViewController(_ newAppleStoreViewController: NewAppleStoreViewController, didCreateStore store: Store) {
         print("\(store)")
         //cacher le dismiss du controller
-        self.stores.append(store)
+        let data =  CoreDataHandler.fetchStore()! as [Store]
+       
+        self.stores = data
         newAppleStoreViewController.dismiss(animated: true)
     }
         
