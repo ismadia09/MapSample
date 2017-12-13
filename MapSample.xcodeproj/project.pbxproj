@@ -17,15 +17,16 @@
 		5A19449B1FBC8D0C008CEA31 /* NewAppleStoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1944991FBC8D0C008CEA31 /* NewAppleStoreViewController.xib */; };
 		5A19449E1FBC91A8008CEA31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A1944A01FBC91A8008CEA31 /* Localizable.strings */; };
 		5A1944A41FBC9EC6008CEA31 /* PortraitNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1944A31FBC9EC6008CEA31 /* PortraitNavigationController.swift */; };
-		5A22C0101FBD8C840050561B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22C00F1FBD8C840050561B /* Store.swift */; };
 		5A22C0151FBDA2C30050561B /* MainStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22C0131FBDA2C30050561B /* MainStoreViewController.swift */; };
 		5A22C0161FBDA2C30050561B /* MainStoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A22C0141FBDA2C30050561B /* MainStoreViewController.xib */; };
 		5A22C0191FBDA8680050561B /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22C0171FBDA8680050561B /* StoreListViewController.swift */; };
 		5A22C01A1FBDA8680050561B /* StoreListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A22C0181FBDA8680050561B /* StoreListViewController.xib */; };
 		5A22C01C1FBDAA8C0050561B /* UIViewController + ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22C01B1FBDAA8C0050561B /* UIViewController + ChildViewController.swift */; };
 		5A22C01E1FBDB02F0050561B /* StoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22C01D1FBDB02F0050561B /* StoreProvider.swift */; };
-		5A73EFB61FD82ABD001C5B95 /* StoreListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73EFB41FD82ABD001C5B95 /* StoreListCollectionViewCell.swift */; };
-		5A73EFB71FD82ABD001C5B95 /* StoreListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A73EFB51FD82ABD001C5B95 /* StoreListCollectionViewCell.xib */; };
+		5A5BC6851FDEF0A7006F1059 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BC6831FDEF0A7006F1059 /* StoreListTableViewCell.swift */; };
+		5A5BC6861FDEF0A7006F1059 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5BC6841FDEF0A7006F1059 /* StoreListTableViewCell.xib */; };
+		5A8AA3B21FDD4D92008B1235 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8AA3B11FDD4D92008B1235 /* CoreDataHandler.swift */; };
+		5AB84A3F1FDC0277003E1DB7 /* StoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB84A3D1FDC0277003E1DB7 /* StoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,15 +44,16 @@
 		5A1944A11FBC91DC008CEA31 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A1944A21FBC91DC008CEA31 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5A1944A31FBC9EC6008CEA31 /* PortraitNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitNavigationController.swift; sourceTree = "<group>"; };
-		5A22C00F1FBD8C840050561B /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		5A22C0131FBDA2C30050561B /* MainStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoreViewController.swift; sourceTree = "<group>"; };
 		5A22C0141FBDA2C30050561B /* MainStoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainStoreViewController.xib; sourceTree = "<group>"; };
 		5A22C0171FBDA8680050561B /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
 		5A22C0181FBDA8680050561B /* StoreListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListViewController.xib; sourceTree = "<group>"; };
 		5A22C01B1FBDAA8C0050561B /* UIViewController + ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ChildViewController.swift"; sourceTree = "<group>"; };
 		5A22C01D1FBDB02F0050561B /* StoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProvider.swift; sourceTree = "<group>"; };
-		5A73EFB41FD82ABD001C5B95 /* StoreListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListCollectionViewCell.swift; sourceTree = "<group>"; };
-		5A73EFB51FD82ABD001C5B95 /* StoreListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListCollectionViewCell.xib; sourceTree = "<group>"; };
+		5A5BC6831FDEF0A7006F1059 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
+		5A5BC6841FDEF0A7006F1059 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
+		5A8AA3B11FDD4D92008B1235 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		5AB84A3E1FDC0277003E1DB7 /* StoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				5A19447F1FBC77A9008CEA31 /* AppDelegate.swift */,
+				5AB84A3D1FDC0277003E1DB7 /* StoreData.xcdatamodeld */,
 				5A22C0121FBDA2040050561B /* Model */,
 				5A22C0111FBDA1C30050561B /* Controller */,
 				5A1944861FBC77A9008CEA31 /* Assets.xcassets */,
@@ -118,8 +121,8 @@
 				5A22C0141FBDA2C30050561B /* MainStoreViewController.xib */,
 				5A22C0171FBDA8680050561B /* StoreListViewController.swift */,
 				5A22C0181FBDA8680050561B /* StoreListViewController.xib */,
-				5A73EFB41FD82ABD001C5B95 /* StoreListCollectionViewCell.swift */,
-				5A73EFB51FD82ABD001C5B95 /* StoreListCollectionViewCell.xib */,
+				5A5BC6831FDEF0A7006F1059 /* StoreListTableViewCell.swift */,
+				5A5BC6841FDEF0A7006F1059 /* StoreListTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,8 +130,8 @@
 		5A22C0121FBDA2040050561B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5A22C00F1FBD8C840050561B /* Store.swift */,
 				5A22C01D1FBDB02F0050561B /* StoreProvider.swift */,
+				5A8AA3B11FDD4D92008B1235 /* CoreDataHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,7 +201,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A73EFB71FD82ABD001C5B95 /* StoreListCollectionViewCell.xib in Resources */,
 				5A19449E1FBC91A8008CEA31 /* Localizable.strings in Resources */,
 				5A22C0161FBDA2C30050561B /* MainStoreViewController.xib in Resources */,
 				5A22C01A1FBDA8680050561B /* StoreListViewController.xib in Resources */,
@@ -206,6 +208,7 @@
 				5A19448A1FBC77A9008CEA31 /* LaunchScreen.storyboard in Resources */,
 				5A1944941FBC77CA008CEA31 /* MapViewController.xib in Resources */,
 				5A1944871FBC77A9008CEA31 /* Assets.xcassets in Resources */,
+				5A5BC6861FDEF0A7006F1059 /* StoreListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,10 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A73EFB61FD82ABD001C5B95 /* StoreListCollectionViewCell.swift in Sources */,
 				5A22C01E1FBDB02F0050561B /* StoreProvider.swift in Sources */,
+				5A8AA3B21FDD4D92008B1235 /* CoreDataHandler.swift in Sources */,
 				5A22C0191FBDA8680050561B /* StoreListViewController.swift in Sources */,
-				5A22C0101FBD8C840050561B /* Store.swift in Sources */,
+				5AB84A3F1FDC0277003E1DB7 /* StoreData.xcdatamodeld in Sources */,
+				5A5BC6851FDEF0A7006F1059 /* StoreListTableViewCell.swift in Sources */,
 				5A22C01C1FBDAA8C0050561B /* UIViewController + ChildViewController.swift in Sources */,
 				5A1944801FBC77A9008CEA31 /* AppDelegate.swift in Sources */,
 				5A1944931FBC77CA008CEA31 /* MapViewController.swift in Sources */,
@@ -414,6 +418,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AB84A3D1FDC0277003E1DB7 /* StoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AB84A3E1FDC0277003E1DB7 /* StoreData.xcdatamodel */,
+			);
+			currentVersion = 5AB84A3E1FDC0277003E1DB7 /* StoreData.xcdatamodel */;
+			path = StoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5A1944741FBC77A9008CEA31 /* Project object */;
 }

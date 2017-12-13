@@ -75,7 +75,7 @@ extension Store{
     public var annotation: MKAnnotation {
         let pointAnnotation = MKPointAnnotation()
         pointAnnotation.title = self.name
-        pointAnnotation.coordinate = self.coordinate
+        pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
         pointAnnotation.subtitle = self.openingHours
         return pointAnnotation
     }
@@ -100,6 +100,7 @@ extension MapViewController: MKMapViewDelegate{
         let view = mapView.dequeueReusableAnnotationView(withIdentifier: MapViewController.appleStoreId)
         if let reused = view {
             reused.annotation = annotation
+            reused.canShowCallout = true
             return reused
         }
             //si la vue de la localisation n'existe pas
@@ -107,6 +108,7 @@ extension MapViewController: MKMapViewDelegate{
             pin.canShowCallout = true
             pin.pinTintColor = .yellow
         
-        return pin
+        
+        return nil
     }
 }

@@ -13,10 +13,14 @@
             <connections>
                 <outlet property="hoursLabel" destination="Pbc-eg-YKc" id="1VL-hM-NG6"/>
                 <outlet property="hoursTextField" destination="99D-JC-BoA" id="7Yn-OY-HsT"/>
+                <outlet property="hoursView" destination="Vea-Yf-dv0" id="KgH-2w-LJ3"/>
                 <outlet property="latLabel" destination="Q3l-tr-66j" id="hIC-79-m8b"/>
                 <outlet property="latTextField" destination="ybK-xi-kWd" id="TJu-tu-RAL"/>
+                <outlet property="latView" destination="Jym-Jl-XYk" id="bnX-89-phf"/>
                 <outlet property="lonLabel" destination="MMx-4y-xwS" id="1CJ-nx-N4m"/>
                 <outlet property="lonTextField" destination="z2Z-1R-bl9" id="LmF-yj-tJD"/>
+                <outlet property="lonView" destination="wyA-rF-k3c" id="ne2-8Y-lcd"/>
+                <outlet property="nameView" destination="eDs-u9-DMO" id="TZL-KT-iDy"/>
                 <outlet property="titleLabel" destination="lmN-s0-CXG" id="Pal-uz-gVz"/>
                 <outlet property="titleTextField" destination="dS2-JD-Zpf" id="3eD-ny-ncM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -27,13 +31,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDs-u9-DMO">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDs-u9-DMO" userLabel="NameView">
                     <rect key="frame" x="40" y="60" width="334" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmN-s0-CXG">
                             <rect key="frame" x="10" y="10" width="41" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dS2-JD-Zpf">
@@ -54,13 +58,13 @@
                         <constraint firstItem="lmN-s0-CXG" firstAttribute="top" secondItem="eDs-u9-DMO" secondAttribute="top" constant="10" id="r2l-jf-qqa"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jym-Jl-XYk">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jym-Jl-XYk" userLabel="LatView">
                     <rect key="frame" x="40" y="130" width="334" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3l-tr-66j">
                             <rect key="frame" x="10" y="10" width="67.333333333333329" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-xi-kWd">
@@ -81,13 +85,13 @@
                         <constraint firstItem="ybK-xi-kWd" firstAttribute="leading" secondItem="Q3l-tr-66j" secondAttribute="trailing" constant="10" id="uBs-TO-ZXQ"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyA-rF-k3c">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyA-rF-k3c" userLabel="LonView">
                     <rect key="frame" x="40" y="200" width="334" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMx-4y-xwS">
                             <rect key="frame" x="10" y="10" width="81.333333333333343" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z2Z-1R-bl9">
@@ -108,13 +112,13 @@
                         <constraint firstItem="z2Z-1R-bl9" firstAttribute="leading" secondItem="MMx-4y-xwS" secondAttribute="trailing" constant="10" id="vN7-Cw-FIx"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-Yf-dv0">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-Yf-dv0" userLabel="HoursView">
                     <rect key="frame" x="40" y="270" width="334" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horaires:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbc-eg-YKc">
                             <rect key="frame" x="10" y="10" width="69.333333333333329" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99D-JC-BoA">
@@ -136,7 +140,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jym-Jl-XYk" secondAttribute="trailing" constant="40" id="0x3-bR-j4D"/>
                 <constraint firstItem="wyA-rF-k3c" firstAttribute="top" secondItem="Jym-Jl-XYk" secondAttribute="bottom" constant="20" id="7md-8X-EkQ"/>
