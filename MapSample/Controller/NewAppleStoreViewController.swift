@@ -70,10 +70,11 @@ public class NewAppleStoreViewController: UIViewController {
         navigationBar.barTintColor = UIColor.darkGray
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
-        //création du bouton annuler
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeViewController))
         
         if isForUpdate == false {
+            
+        //création du bouton annuler
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeViewController))
             
         //création du bouton valider
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(submitAppleStore))
