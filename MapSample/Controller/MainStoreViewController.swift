@@ -18,6 +18,8 @@ class MainStoreViewController: UIViewController, StoreProvider {
     
     var stores: [Store] = []
     
+    
+    
     // appelé uniquement la 1ere fois
     //ajouter les stores dans la carte
     lazy var mapViewController: MapViewController = {
@@ -50,9 +52,6 @@ class MainStoreViewController: UIViewController, StoreProvider {
         //self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         stores = CoreDataHandler.fetchStore()!
-    }
-    @objc func actionEdit() {
-        
     }
    
     

@@ -81,12 +81,18 @@ public class NewAppleStoreViewController: UIViewController {
             
         }else {
             
-            
         //création du bouton modififer
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(submitAppleStore))
-        }
+            
+            let lat = store?.latitude
+            let lon = store?.longitude
+            
+            titleTextField.text = store?.name
+            latTextField.text = lat?.toString()
+            lonTextField.text = lon?.toString()
+            hoursTextField.text = store?.openingHours
         
-       
+        }
         
     }
     
@@ -132,6 +138,7 @@ public class NewAppleStoreViewController: UIViewController {
                 return
             }
             CoreDataHandler.updateSpecificStore(storeToModify, name: title, latitude: lat, longitude: lon, openingHours: hours)
+            navigationController?.popViewController(animated: true)
         }
         
     }
@@ -143,5 +150,11 @@ extension NewAppleStoreViewController : UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension Double {
+    func toString() -> String {
+        return String(format: "%.1f",self)
     }
 }
