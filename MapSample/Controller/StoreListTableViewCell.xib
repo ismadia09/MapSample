@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +24,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jk-lC-6gA">
-                        <rect key="frame" x="0.0" y="0.0" width="376" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="130"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_location-pin_big" translatesAutoresizingMaskIntoConstraints="NO" id="6PN-kC-edp">
-                                <rect key="frame" x="5" y="36" width="38" height="48"/>
+                                <rect key="frame" x="5" y="41" width="38" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Wo0-4z-BNx"/>
                                     <constraint firstAttribute="width" constant="38" id="jgV-Lm-hvX"/>
@@ -52,13 +52,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWg-ks-Qje">
-                                <rect key="frame" x="53" y="94" width="313" height="26"/>
+                                <rect key="frame" x="53" y="104" width="313" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RCU-da-iDz" secondAttribute="trailing" constant="10" id="2LY-yY-cWL"/>
                             <constraint firstItem="6PN-kC-edp" firstAttribute="centerY" secondItem="5jk-lC-6gA" secondAttribute="centerY" id="AWF-Ma-QwL"/>
@@ -73,11 +72,12 @@
                             <constraint firstItem="vlS-GF-2mZ" firstAttribute="leading" secondItem="6PN-kC-edp" secondAttribute="trailing" constant="10" id="hjs-Oh-eJk"/>
                             <constraint firstItem="rWg-ks-Qje" firstAttribute="leading" secondItem="6PN-kC-edp" secondAttribute="trailing" constant="10" id="hu8-mt-5Bc"/>
                             <constraint firstItem="vlS-GF-2mZ" firstAttribute="top" secondItem="Ieh-Sk-ONI" secondAttribute="bottom" constant="2" id="ijI-By-2kM"/>
-                            <constraint firstAttribute="height" constant="120" id="n2Y-Er-ofZ"/>
+                            <constraint firstAttribute="height" constant="130" id="n2Y-Er-ofZ"/>
                             <constraint firstAttribute="bottom" secondItem="rWg-ks-Qje" secondAttribute="bottom" id="pl6-3w-ekE"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="5jk-lC-6gA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="H4D-yp-lln"/>
                     <constraint firstItem="5jk-lC-6gA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KLm-If-R6u"/>

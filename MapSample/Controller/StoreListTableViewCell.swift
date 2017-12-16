@@ -21,7 +21,7 @@ class StoreListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        cellView.layer.cornerRadius = 10
+        cellView.layer.cornerRadius = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

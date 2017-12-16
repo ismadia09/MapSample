@@ -38,6 +38,9 @@ public class NewAppleStoreViewController: UIViewController {
     @IBOutlet weak var lonView: UIView!
     @IBOutlet weak var hoursView: UIView!
     
+    var store: Store?
+    var isForUpdate = false
+    
     
     //Lorsqu'on 
     public weak var delegate: NewAppleStoreViewControllerDelegate?
@@ -61,6 +64,7 @@ public class NewAppleStoreViewController: UIViewController {
         lonView.layer.cornerRadius = 5
         hoursView.layer.cornerRadius = 5
         
+        
         let navigationBar = UINavigationBar.appearance()
         navigationBar.tintColor = UIColor.white
         navigationBar.barTintColor = UIColor.darkGray
@@ -69,9 +73,19 @@ public class NewAppleStoreViewController: UIViewController {
         //création du bouton annuler
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeViewController))
         
+        if isForUpdate == false {
+            
         //création du bouton valider
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(submitAppleStore))
+            
+        }else {
+            
+            
+        //création du bouton modififer
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(submitAppleStore))
+        }
         
+       
         
     }
     
@@ -81,6 +95,7 @@ public class NewAppleStoreViewController: UIViewController {
     }
     
     @objc public func closeViewController(){
+        isForUpdate = false
         self.dismiss(animated: true)
     }
     
@@ -104,11 +119,19 @@ public class NewAppleStoreViewController: UIViewController {
                 return
         }
         
+        if isForUpdate == false {
         
         let store = CoreDataHandler.createStore(name: title, latitude: lat, longitude: lon, openingHours: hours)
         
         //on met le store dans le delegate, on le notifie mais personne ecout pour l'instant, il faut le faire dans le view controller de la map
         self.delegate?.newAppleStoreViewController(self, didCreateStore: store)
+        }else {
+            
+            guard let storeToModify = store else {
+                return
+            }
+            CoreDataHandler.updateSpecificStore(storeToModify, name: title, latitude: lat, longitude: lon, openingHours: hours)
+        }
         
     }
 

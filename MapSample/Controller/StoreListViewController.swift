@@ -31,7 +31,8 @@ class StoreListViewController: UIViewController {
     }
     
     @objc func actionEdit() {
-        
+        storeTableView.isEditing = !storeTableView.isEditing
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +63,7 @@ extension StoreListViewController : UITableViewDataSource {
         cell.lonLabel.text = String(store.longitude)
         cell.openingHoursLabel.text = store.openingHours
         
-        cell.layer.cornerRadius = 5
+        cell.layer.cornerRadius = 0
         cell.layer.borderColor = UIColor.darkGray.cgColor
         cell.layer.borderWidth = 0
         return cell
@@ -79,6 +80,10 @@ extension StoreListViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.storeTableView.deselectRow(at: indexPath, animated: true)
+        let newAppleStoreViewController = NewAppleStoreViewController()
+        newAppleStoreViewController.store = storeProvider?.stores[indexPath.row]
+        newAppleStoreViewController.isForUpdate = true
+        navigationController?.pushViewController(newAppleStoreViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -87,6 +92,18 @@ extension StoreListViewController : UITableViewDelegate{
             storeProvider?.stores.remove(at: indexPath.row)
             tableView.reloadData()
         }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let item = storeProvider?.stores[sourceIndexPath.row]
+        storeProvider?.stores.remove(at: sourceIndexPath.row)
+        storeProvider?.stores.insert(item!, at: destinationIndexPath.row)
+        
         
     }
     

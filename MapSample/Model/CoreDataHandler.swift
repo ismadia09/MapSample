@@ -18,6 +18,8 @@ class CoreDataHandler : NSObject {
 
     }
     
+    
+    // On retourne un Store pour pouvoir l'ajouter dans le StoreProvider
     class func createStore(name: String, latitude: Double, longitude: Double, openingHours : String) -> Store{
         
         let context = getContext()
@@ -40,6 +42,7 @@ class CoreDataHandler : NSObject {
 
     }
     
+    // On retourne un tableau de Store pour pouvoir l'ajouter dans le StoreProvider
     class func fetchStore()-> [Store]? {
         let context = getContext()
         let request : NSFetchRequest<Store> = Store.fetchRequest()
@@ -71,6 +74,7 @@ class CoreDataHandler : NSObject {
         }
     }
     
+    //Premier version de la methode qui fonctionne avec un table view
     class func deleteSpecificStore(id: Int){
         let context = getContext()
         let request : NSFetchRequest<Store> = Store.fetchRequest()
@@ -84,11 +88,18 @@ class CoreDataHandler : NSObject {
         }
     }
     
-    class func updateSpecificStore(){
+    class func updateSpecificStore(_ store: Store, name: String, latitude: Double, longitude: Double, openingHours : String){
         let context = getContext()
         let request : NSFetchRequest<Store> = Store.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@ AND longitude == %@ AND latitude == %@ AND openingHours == %@", store.name!, String(store.longitude), String(store.latitude), store.openingHours! )
         do {
-            var result = try context.fetch(request)
+            let result = try context.fetch(request)
+            for store in result{
+                store.name = name
+                store.longitude = longitude
+                store.latitude = latitude
+                store.openingHours = openingHours
+            }
             try? context.save()
         }catch {
             print("error update store ")
